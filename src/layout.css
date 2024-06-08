@@ -1,0 +1,53 @@
+/* Structural Elements */
+
+section, article {
+    @apply rounded-lg my-4 sm:my-6 md:my-8 lg:my-10 shadow-lg mx-auto;
+}
+
+/* Horizontal Rule */
+hr {
+    @apply border-0 h-px my-4 sm:my-6 md:my-8 lg:my-10 bg-gray-700;
+}
+
+/* Card Design */
+div {
+    @apply border border-solid border-gray-700 rounded-xl shadow-xl overflow-hidden;
+}
+
+/* Card content */
+div > div {
+    @apply px-4 py-2 sm:px-4 md:px-6;
+}
+
+/* Card actions */
+div > div > div {
+    @apply border-none flex justify-end mt-6;
+}
+
+/* Table Grid Design */
+table {
+    @apply w-full border-collapse;
+}
+
+td {
+    @apply py-2 pr-2 sm:pr-4 sm:py-6 md:pr-6 md:py-6;
+    @apply sm:w-56 md:w-64;
+}
+
+@media (max-width: 640px) {
+    table, thead, tbody, th, td, tr {
+        @apply block;
+    }
+
+    thead tr {
+        @apply absolute -top-full -left-full -right-full -mt-2 -ml-2 -mr-2;
+    }
+
+    tr {
+        @apply mb-4;
+    }
+
+    td {
+        @apply relative block pl-2 pr-4 py-4;
+    }
+}
