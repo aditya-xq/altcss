@@ -15,24 +15,30 @@ Alt CSS is all about simplicity and style, without the fuss. It's built on Tailw
 3. **Keep it simple.**
 4. **Keep it clean.**
 
+Interested to know more about why I created this? Read this [blog post](https://medium.com/p/8f8e11f4a875).
+
 ## 📦 Installation
 To get started with Alt CSS, add it to your project:
 
 ```sh
 npm install altcss
+```
+```sh
 pnpm add altcss
+```
+```sh
 bun add altcss
 ```
 
 ## 🛠 Usage
 
-Import Alt CSS in your project:
+Import Alt CSS in your project (E.g. In sveltekit, you would import this under the script tag of +layout.svelte):
 
-```css
-@import 'altcss/alt.min.css';
+```ts
+import 'altcss/alt.min.css';
 ```
 
-And voilà! You're ready to go. Just use native html without any further CSS in your project. Check out the example usage in our `index.html` file for more details.
+And voilà! You're ready to go. Just use native html without any further CSS in your project.
 
 ## 📝 Documentation
 ### Typography
@@ -50,7 +56,7 @@ And voilà! You're ready to go. Just use native html without any further CSS in 
 - **Horizontal Rule**: Stylish horizontal lines
 
 ## 📄 Example
-Here's a quick example to see Alt CSS in action.
+Here's a quick example to see Alt CSS in action: https://aditya-xq.github.io/altcss/
 
 ## 🚧 Roadmap
 - Design frequently used HTML tags
@@ -62,7 +68,7 @@ Here's a quick example to see Alt CSS in action.
 Alt CSS is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## 🎉 Acknowledgments
-Special thanks to the Tailwind CSS community for their amazing work.
+Special thanks to the Tailwind CSS community for their amazing work. Also, special mention to ChatGPT for being the awesome companion in helping with debugging, writing code and creative support.
 
 ## Caution
 This project is frequently updated.

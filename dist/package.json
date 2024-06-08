@@ -1,6 +1,6 @@
 {
     "name": "altcss",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "description": "Opinionated, unconventional, lightweight CSS component library.",
     "main": "alt.min.css",
     "files": [
