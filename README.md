@@ -18,7 +18,7 @@ AltCSS is all about simplicity and style, without the fuss. It's built on Tailwi
 Interested to know more about why I created this? Read this [blog post](https://medium.com/p/8f8e11f4a875).
 
 ## 📦 Installation
-To get started with Alt CSS, add it to your project:
+To get started with AltCSS, add it to your project:
 
 ```sh
 npm install altcss
@@ -58,7 +58,7 @@ Only these tags are supported at the moment. More will be added soon. To underst
 - **Horizontal Rule**: Stylish horizontal lines
 
 ## 📄 Example
-Here's a quick example to see Alt CSS in action: https://aditya-xq.github.io/altcss/
+Here's a quick example to see AltCSS in action: https://aditya-xq.github.io/altcss/
 
 ## 🚧 Roadmap
 - Design frequently used HTML tags
@@ -67,7 +67,7 @@ Here's a quick example to see Alt CSS in action: https://aditya-xq.github.io/alt
 - Design builder
 
 ## 📜 License
-Alt CSS is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+AltCSS is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## 🎉 Acknowledgments
 Special thanks to the Tailwind CSS community for their amazing work. Also, special mention to ChatGPT for being the awesome companion in helping with debugging, writing code and creative support.
