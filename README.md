@@ -1,8 +1,8 @@
-# 🌈 Alt CSS
-Welcome to Alt CSS, the opinionated, unconventional, lightweight CSS component library you didn't know you needed! 🎉
+# 🌈 AltCSS
+Welcome to AltCSS, the opinionated, unconventional, lightweight CSS component library you didn't know you needed! 🎉
 
 ## 📚 Overview
-Alt CSS is all about simplicity and style, without the fuss. It's built on Tailwind CSS and designed to make your web projects look sleek and modern with minimal effort. 
+AltCSS is all about simplicity and style, without the fuss. It's built on Tailwind CSS and designed to make your web projects look sleek and modern with minimal effort. 
 
 ## 🚀 Features
 - **Typography**: Beautifully styled headings, paragraphs, and links to make your content pop.
@@ -32,7 +32,7 @@ bun add altcss
 
 ## 🛠 Usage
 
-Import Alt CSS in your project (E.g. In sveltekit, you would import this under the script tag of +layout.svelte):
+Import AltCSS in your project (E.g. In sveltekit, you would import this under the script tag of +layout.svelte):
 
 ```ts
 import 'altcss/alt.min.css';
