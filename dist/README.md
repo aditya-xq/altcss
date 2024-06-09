@@ -41,6 +41,8 @@ import 'altcss/alt.min.css';
 And voilà! You're ready to go. Just use native html without any further CSS in your project.
 
 ## 📝 Documentation
+Only these tags are supported at the moment. More will be added soon. To understand how to use them, you can refer to index.html.
+
 ### Typography
 - **Headings**: `h1`, `h2`, `h3`, `h4`
 - **Text**: `p`
