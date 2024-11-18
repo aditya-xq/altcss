@@ -1,0 +1,52 @@
+/* Navigation menu in header */
+
+nav > div {
+    @apply border-none flex gap-6;
+}
+
+/* Navigation drop down */
+nav > details {
+    @apply hidden;
+}
+
+/* Hide default <summary> triangle icon */
+nav > details > summary {
+    @apply list-none cursor-pointer text-lg py-2;
+}
+
+/* Dropdown container: initially hidden */
+nav > details > div {
+    @apply hidden absolute bg-black border border-gray-600 rounded -ml-16 px-2 w-30;
+}
+
+/* Show dropdown when <details> is open */
+nav > details[open] > div {
+    @apply block;
+}
+
+/* Dropdown list items */
+nav > details > div > p {
+    @apply px-1;
+}
+
+/* Vertical left nav bar */
+main > section > nav {
+    @apply flex flex-col w-48;
+}
+
+main nav p {
+    @apply mx-0 my-1;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    nav {
+        @apply relative;
+    }
+    nav > div {
+        @apply hidden;
+    }
+    nav > details {
+        @apply block w-full;
+    }
+}

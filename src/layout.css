@@ -1,7 +1,11 @@
 /* Structural Elements */
 
-section, article {
-    @apply rounded-lg my-4 sm:my-6 md:my-8 lg:my-10 shadow-lg mx-auto;
+section {
+    @apply my-4 sm:my-6 md:my-8 lg:my-10 mx-auto;
+}
+
+article {
+    @apply flex-1 p-6 overflow-y-auto;
 }
 
 /* Horizontal Rule */

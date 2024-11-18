@@ -21,14 +21,26 @@ h4 {
     @apply text-lg text-yellow-400 sm:text-xl md:text-2xl lg:text-3xl font-medium my-3 tracking-tight;
 }
 
+h5 {
+    @apply text-sm text-yellow-400 sm:text-lg md:text-xl lg:text-2xl font-medium my-3 tracking-tight;
+}
+
 /* Text */
 p {
     @apply text-lg sm:text-xl md:text-2xl text-gray-500 my-3 leading-relaxed tracking-wide;
 }
 
+article p {
+    @apply text-sm sm:text-lg md:text-xl;
+}
+
+section li > a {
+    @apply text-gray-500 leading-relaxed tracking-wide;
+}
+
 /* Links */
 a {
-    @apply text-yellow-400 relative transition-colors duration-200 ease-in-out no-underline;
+    @apply text-yellow-400 relative transition-colors duration-200 ease-in-out no-underline cursor-pointer;
 }
 
 a::after {

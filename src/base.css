@@ -1,54 +1,15 @@
-body {
-    @apply bg-black mx-4 my-4 sm:mx-8 sm:my-6 md:mx-16 md:my-8 lg:mx-24 lg:my-10 xl:mx-32 xl:my-10;
-}
-
 header {
     @apply flex flex-wrap justify-between items-center px-4 py-2 border-b border-gray-700;
 }
 
-/* Navigation menu in header */
+body {
+    @apply bg-black mx-4 my-4 sm:mx-8 sm:my-6 md:mx-16 md:my-8 lg:mx-24 lg:my-10 xl:mx-32 xl:my-10;
+}
+
+main {
+    @apply flex my-4;
+}
+
 nav {
     @apply flex flex-wrap;
-}
-
-nav > div {
-    @apply border-none flex gap-6;
-}
-
-/* Navigation drop down */
-nav > details {
-    @apply hidden;
-}
-
-/* Hide default <summary> triangle icon */
-nav > details > summary {
-    @apply list-none cursor-pointer text-lg py-2;
-}
-
-/* Dropdown container: initially hidden */
-nav > details > div {
-    @apply hidden absolute bg-gray-800 border border-gray-600 rounded -ml-16 px-2 w-30;
-}
-
-/* Show dropdown when <details> is open */
-nav > details[open] > div {
-    @apply block;
-}
-
-/* Dropdown list items */
-nav > details > div > p {
-    @apply px-1;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 600px) {
-    nav {
-        @apply relative;
-    }
-    nav > div {
-        @apply hidden;
-    }
-    nav > details {
-        @apply block w-full;
-    }
 }
