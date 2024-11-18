@@ -1,5 +1,5 @@
 # 🌈 AltCSS
-Welcome to AltCSS, the opinionated, unconventional, lightweight CSS component library you didn't know you needed! 🎉
+Welcome to AltCSS, the opinionated, offbeat, lightweight CSS component library you didn't know you needed! 🎉
 
 ## 📚 Overview
 AltCSS is all about simplicity and style, without the fuss. It's built on Tailwind CSS and designed to make your web projects look sleek and modern with minimal effort. 
