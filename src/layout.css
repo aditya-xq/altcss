@@ -4,6 +4,10 @@ section {
     @apply my-4 sm:my-6 md:my-8 lg:my-10 mx-auto;
 }
 
+main > section {
+    @apply hidden md:block;
+}
+
 article {
     @apply flex-1 p-6 overflow-y-auto;
 }
