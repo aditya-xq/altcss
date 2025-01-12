@@ -1,7 +1,18 @@
 /* Structural Elements */
 
+/* Base section styles */
 section {
     @apply my-4 sm:my-6 md:my-8 lg:my-10 mx-auto;
+}
+
+/* Dynamic Grid Layout */
+section:has(> article) {
+    @apply grid gap-4 grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))];
+}
+
+/* Article styles within grid */
+section > article {
+    @apply p-4 overflow-y-auto;
 }
 
 main > section {
@@ -17,45 +28,18 @@ hr {
     @apply border-0 h-px my-4 sm:my-6 md:my-8 lg:my-10 bg-gray-700;
 }
 
+/* Card Design using figure element */
 /* Card Design */
-div {
+figure {
     @apply border border-solid border-gray-700 rounded-xl shadow-xl overflow-hidden;
 }
 
 /* Card content */
-div > div {
+figure > figcaption {
     @apply px-4 py-2 sm:px-4 md:px-6;
 }
 
 /* Card actions */
-div > div > div {
+figure > footer {
     @apply border-none flex justify-end mt-6;
-}
-
-/* Table Grid Design */
-table {
-    @apply w-full border-collapse;
-}
-
-td {
-    @apply py-2 pr-2 sm:pr-4 sm:py-6 md:pr-6 md:py-6;
-    @apply sm:w-56 md:w-64;
-}
-
-@media (max-width: 640px) {
-    table, thead, tbody, th, td, tr {
-        @apply block;
-    }
-
-    thead tr {
-        @apply absolute -top-full -left-full -right-full -mt-2 -ml-2 -mr-2;
-    }
-
-    tr {
-        @apply mb-4;
-    }
-
-    td {
-        @apply relative block pl-2 pr-4 py-4;
-    }
 }

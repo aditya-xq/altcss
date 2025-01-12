@@ -1,0 +1,75 @@
+/* Lists - Base Styles */
+ul, ol {
+    @apply my-4 pl-8 text-gray-400 marker:text-yellow-400;
+}
+
+li {
+    @apply my-4 text-sm sm:text-lg md:text-xl leading-relaxed tracking-wide;
+}
+
+/* Unordered Lists */
+ul {
+    @apply list-disc;
+}
+
+ul ul {
+    @apply list-circle mt-2 mb-4;
+}
+
+ul ul ul {
+    @apply list-square;
+}
+
+/* Ordered Lists */
+ol {
+    @apply list-decimal;
+}
+
+ol ol {
+    @apply list-alpha mt-2 mb-4;
+}
+
+ol ol ol {
+    @apply list-roman;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    ul, ol {
+        @apply pl-6;
+    }
+
+    li {
+        @apply text-base;
+    }
+}
+
+/* Interactive States */
+li:hover {
+    @apply text-gray-300 transition-colors duration-200;
+}
+
+/* List Groups */
+ul[role="listbox"],
+ol[role="listbox"] {
+    @apply divide-y divide-gray-700;
+}
+
+ul[role="listbox"] li,
+ol[role="listbox"] li {
+    @apply py-3 px-4 cursor-pointer hover:bg-gray-800 transition-colors duration-200;
+}
+
+/* Breadcrumb Lists */
+ul[role="breadcrumb"] {
+    @apply flex flex-wrap list-none pl-0 items-center;
+}
+
+ul[role="breadcrumb"] li {
+    @apply flex items-center;
+}
+
+ul[role="breadcrumb"] li:not(:last-child)::after {
+    content: "/";
+    @apply mx-2 text-gray-400;
+}

@@ -1,8 +1,12 @@
 /* Typography */
 
+::selection {
+    @apply bg-yellow-400 text-black;
+}
+
 /* Headings */
 h1, h2, h3 {
-    @apply text-gray-400 tracking-tight;
+    @apply text-gray-300 tracking-tight;
 }
 
 h1 {
@@ -27,7 +31,7 @@ h5 {
 
 /* Text */
 p {
-    @apply text-lg sm:text-xl md:text-2xl text-gray-500 my-3 leading-relaxed tracking-wide;
+    @apply text-lg sm:text-xl md:text-2xl text-gray-400 my-3 leading-relaxed tracking-wide;
 }
 
 article p {

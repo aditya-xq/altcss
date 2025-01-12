@@ -13,3 +13,11 @@ main {
 nav {
     @apply flex flex-wrap;
 }
+
+footer {
+    @apply flex flex-wrap justify-between items-center px-4 py-2 border-t border-gray-700;
+}
+
+footer p {
+    @apply text-lg;
+}
