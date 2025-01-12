@@ -15,12 +15,13 @@ section > article {
     @apply p-4 overflow-y-auto;
 }
 
+/* Docs styles */
 main > section {
     @apply hidden md:block;
 }
 
 article {
-    @apply flex-1 p-6 overflow-y-auto;
+    @apply flex-1 p-2 md:p-6 mr-2 overflow-y-auto;
 }
 
 /* Horizontal Rule */

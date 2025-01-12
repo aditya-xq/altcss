@@ -7,7 +7,7 @@ body {
 }
 
 main {
-    @apply flex my-4;
+    @apply flex md:my-4;
 }
 
 nav {
