@@ -21,12 +21,12 @@ main > section {
 }
 
 article {
-    @apply flex-1 p-2 md:p-6 mr-2 overflow-y-auto;
+    @apply flex-1 p-2 md:p-4 mr-2 overflow-y-auto;
 }
 
 /* Horizontal Rule */
 hr {
-    @apply border-0 h-px my-4 sm:my-6 md:my-8 lg:my-10 bg-gray-700;
+    @apply border-0 h-px my-2 sm:my-4 md:my-6 lg:my-10 bg-gray-700;
 }
 
 /* Card Design using figure element */

@@ -15,9 +15,9 @@ nav {
 }
 
 footer {
-    @apply flex flex-wrap justify-between items-center px-4 py-2 border-t border-gray-700;
+    @apply flex flex-col sm:flex-row flex-wrap justify-between items-center p-4 border-t border-gray-700 gap-2 sm:gap-0;
 }
 
 footer p {
-    @apply text-lg;
+    @apply text-base sm:text-lg text-center sm:text-left w-full sm:w-auto;
 }
