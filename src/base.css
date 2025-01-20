@@ -19,5 +19,5 @@ footer {
 }
 
 footer p {
-    @apply text-base sm:text-lg text-center sm:text-left w-full sm:w-auto;
+    @apply text-sm sm:text-base text-center sm:text-left w-full sm:w-auto;
 }
