@@ -1,0 +1,61 @@
+input[type="checkbox"] {
+    @apply appearance-none relative w-12 h-7 bg-gray-200 rounded-full cursor-pointer transition-all duration-300 ease-in-out dark:bg-gray-700;
+}
+  
+input[type="checkbox"]::before {
+    @apply content-[''] absolute w-6 h-6 rounded-full top-0.5 left-0.5 bg-gray-400 transition-transform duration-300 ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+    @apply bg-yellow-400 dark:bg-yellow-300;
+}
+  
+input[type="checkbox"]:checked::before {
+    @apply translate-x-5 bg-gray-100;
+}
+
+@media (max-width: 640px) {
+    input[type="checkbox"] {
+        @apply w-10 h-6;
+    }
+
+    input[type="checkbox"]::before {
+        @apply w-5 h-5;
+    }
+
+    input[type="checkbox"]:checked::before {
+        @apply translate-x-4;
+    }
+}
+
+/* Theme toggle specific styles */
+#theme-toggle {
+    @apply appearance-none relative w-12 h-7 bg-gray-200 rounded-full cursor-pointer transition-all duration-300 ease-in-out dark:bg-gray-700;
+}
+  
+#theme-toggle::before {
+    @apply content-[''] flex items-center justify-center absolute w-6 h-6 rounded-full top-0.5 left-0.5 bg-gray-700 transition-transform duration-300 ease-in-out;
+}
+
+#theme-toggle:checked {
+    @apply bg-yellow-400 dark:bg-yellow-300;
+}
+  
+#theme-toggle:checked::before {
+    @apply translate-x-5 bg-gray-800 content-['🌙'];
+}
+
+/* Theme toggle mobile styles */
+@media (max-width: 640px) {
+    #theme-toggle {
+        @apply w-10 h-6;
+    }
+
+    #theme-toggle::before {
+        @apply w-5 h-5 text-xs;
+    }
+
+    #theme-toggle:checked::before {
+        @apply translate-x-4;
+    }
+}

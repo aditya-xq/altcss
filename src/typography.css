@@ -1,12 +1,12 @@
 /* Typography */
 
 ::selection {
-    @apply bg-yellow-400 text-black;
+    @apply bg-yellow-400 text-black dark:text-white;
 }
 
 /* Headings */
 h1, h2, h3 {
-    @apply text-gray-300 tracking-tight;
+    @apply text-gray-800 dark:text-gray-300 tracking-tight;
 }
 
 h1 {
@@ -22,16 +22,16 @@ h3 {
 }
 
 h4 {
-    @apply text-lg text-yellow-400 sm:text-xl md:text-2xl lg:text-3xl font-medium my-3 tracking-tight;
+    @apply text-lg text-yellow-600 dark:text-yellow-400 sm:text-xl md:text-2xl lg:text-3xl font-medium my-3 tracking-tight;
 }
 
 h5 {
-    @apply text-sm text-yellow-400 sm:text-lg md:text-xl lg:text-2xl font-medium my-3 tracking-tight;
+    @apply text-sm text-yellow-600 dark:text-yellow-400 sm:text-lg md:text-xl lg:text-2xl font-medium my-3 tracking-tight;
 }
 
 /* Text */
 p {
-    @apply text-lg sm:text-xl md:text-2xl text-gray-400 my-3 leading-relaxed tracking-wide;
+    @apply text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-400 my-3 leading-relaxed tracking-wide;
 }
 
 article p {
@@ -39,12 +39,12 @@ article p {
 }
 
 section li > a {
-    @apply text-gray-500 leading-relaxed tracking-wide;
+    @apply text-gray-700 dark:text-gray-500 leading-relaxed tracking-wide;
 }
 
 /* Links */
 a {
-    @apply text-yellow-400 relative transition-colors duration-200 ease-in-out no-underline cursor-pointer;
+    @apply text-yellow-700 dark:text-yellow-400 relative transition-colors duration-200 ease-in-out no-underline cursor-pointer;
 }
 
 a::after {
@@ -63,4 +63,8 @@ a::after {
 a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+[striked], [striked]:hover {
+    @apply text-yellow-600 dark:text-yellow-400 line-through;
 }

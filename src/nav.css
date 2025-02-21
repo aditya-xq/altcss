@@ -11,12 +11,12 @@ nav > details {
 
 /* Hide default <summary> triangle icon */
 nav > details > summary {
-    @apply list-none cursor-pointer text-lg py-2;
+    @apply list-none cursor-pointer text-lg py-2 text-gray-900 dark:text-gray-100;
 }
 
 /* Dropdown container: initially hidden */
 nav > details > div {
-    @apply hidden absolute bg-black border border-gray-600 rounded -ml-16 px-2 w-30;
+    @apply hidden absolute bg-white dark:bg-black border border-gray-200 dark:border-gray-600 rounded -ml-16 px-2 w-30;
 }
 
 /* Show dropdown when <details> is open */
@@ -26,7 +26,7 @@ nav > details[open] > div {
 
 /* Dropdown list items */
 nav > details > div > p {
-    @apply px-1;
+    @apply px-1 text-gray-900 dark:text-gray-100;
 }
 
 /* Vertical left nav bar */

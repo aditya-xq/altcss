@@ -1,9 +1,9 @@
 header {
-    @apply flex flex-wrap justify-between items-center px-4 py-2 border-b border-gray-700;
+    @apply flex flex-wrap justify-between items-center px-4 py-2 border-b border-gray-200 dark:border-gray-700;
 }
 
 body {
-    @apply bg-black mx-6 my-4 sm:mx-8 sm:my-6 md:mx-24 md:my-8 lg:mx-36 lg:my-10 xl:mx-64 xl:my-10;
+    @apply bg-white dark:bg-black text-gray-900 dark:text-gray-100 mx-6 my-4 sm:mx-8 sm:my-6 md:mx-24 md:my-8 lg:mx-36 lg:my-10 xl:mx-64 xl:my-10;
 }
 
 main {
@@ -15,7 +15,7 @@ nav {
 }
 
 footer {
-    @apply flex flex-col sm:flex-row flex-wrap justify-between items-center p-4 border-t border-gray-700 gap-2 sm:gap-0;
+    @apply flex flex-col sm:flex-row flex-wrap justify-between items-center p-4 border-t border-gray-200 dark:border-gray-700 gap-2 sm:gap-0;
 }
 
 footer p {
@@ -23,14 +23,14 @@ footer p {
 }
 
 pre {
-    @apply my-4 p-4 rounded-lg bg-gray-900 overflow-x-auto text-sm md:text-base;
+    @apply my-4 p-4 rounded-lg bg-gray-100 dark:bg-gray-900 overflow-x-auto text-sm md:text-base;
 }
 
 code {
-    @apply bg-gray-900 px-2 py-1 rounded-lg text-sm md:text-base font-mono;
+    @apply bg-gray-100 dark:bg-gray-900 px-2 py-1 rounded-lg text-sm md:text-base font-mono;
 }
 
 /* When code is inside pre, remove the individual code styling */
 pre code {
-    @apply bg-transparent p-0 rounded-none text-gray-400;
+    @apply bg-transparent p-0 rounded-none text-gray-600 dark:text-gray-400;
 }

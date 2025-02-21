@@ -5,3 +5,5 @@
 @utility list-square {list-style-type: square;}
 @utility list-alpha {list-style-type: lower-alpha;}
 @utility list-roman {list-style-type: lower-roman;}
+
+@custom-variant dark (&:where(.dark, .dark *));

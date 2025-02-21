@@ -1,6 +1,6 @@
 /* Lists - Base Styles */
 ul, ol {
-    @apply my-4 pl-8 text-gray-400 marker:text-yellow-400;
+    @apply my-4 pl-8 text-gray-800 dark:text-gray-400 marker:text-yellow-700 dark:marker:text-yellow-400;
 }
 
 li {
@@ -46,18 +46,18 @@ ol ol ol {
 
 /* Interactive States */
 li:hover {
-    @apply text-gray-300 transition-colors duration-200;
+    @apply text-gray-700 dark:text-gray-300 transition-colors duration-200;
 }
 
 /* List Groups */
 ul[role="listbox"],
 ol[role="listbox"] {
-    @apply divide-y divide-gray-700;
+    @apply divide-y divide-gray-200 dark:divide-gray-700;
 }
 
 ul[role="listbox"] li,
 ol[role="listbox"] li {
-    @apply py-3 px-4 cursor-pointer hover:bg-gray-800 transition-colors duration-200;
+    @apply py-3 px-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200;
 }
 
 /* Breadcrumb Lists */
@@ -71,5 +71,5 @@ ul[role="breadcrumb"] li {
 
 ul[role="breadcrumb"] li:not(:last-child)::after {
     content: "/";
-    @apply mx-2 text-gray-400;
+    @apply mx-2 text-gray-600 dark:text-gray-400;
 }
