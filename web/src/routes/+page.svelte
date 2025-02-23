@@ -1,5 +1,6 @@
 <script>
     // @ts-nocheck
+    import { base } from '$app/paths';
     import { onMount } from 'svelte'
     
     let isDarkMode = $state(false)
@@ -40,7 +41,7 @@
         <details>
             <summary><p>Menu</p></summary>
             <div>
-                <p><a href="./docs">
+                <p><a href="{base}/docs">
                     📂 Docs
                 </a></p>
                 <p><a href="https://medium.com/p/8f8e11f4a875" target="_blank" rel="noopener noreferrer">
@@ -52,7 +53,7 @@
             </div>
         </details>
         <div>
-            <p><a href="./docs">
+            <p><a href="{base}/docs">
                 📂 Docs
             </a></p>
             <p><a href="https://medium.com/p/8f8e11f4a875" target="_blank" rel="noopener noreferrer">
