@@ -23,31 +23,13 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2  # Install Bun for package management
 
-      - name: Install dependencies for docs
+      - name: Install dependencies
         run: bun install
-        working-directory: docs  # Ensure dependencies for documentation are installed
+        working-directory: web  # Ensure dependencies are installed in the new "web" folder
 
-      - name: Build SvelteKit docs with Bun
+      - name: Build project
         run: bun run build
-        working-directory: docs  # Build the documentation using SvelteKit
-
-      - name: Prepare deployment directory
-        run: |
-          mkdir -p deploy/docs  # Ensure the deployment directory exists
-          
-          # Copy the root index.html only if it exists
-          [ -f index.html ] && cp index.html deploy/
-
-          # Copy assets folder if it exists
-          [ -d assets ] && cp -r assets deploy/
-          
-          # Ensure the built documentation exists before copying
-          [ -d docs/build ] && cp -r docs/build/* deploy/docs/
-          
-          # Copy additional files for deployment
-          [ -f theme.js ] && cp theme.js deploy/
-          [ -f dist/alt.min.css ] && cp dist/alt.min.css deploy/
-        shell: bash
+        working-directory: web  # Build the project inside "web" folder
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v3  # Configure GitHub Pages for deployment
@@ -55,7 +37,7 @@ jobs:
       - name: Upload artifact for deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: deploy  # Upload only the prepared deployment directory
+          path: web/build  # Upload the build directory directly
 
       - name: Deploy to GitHub Pages
         id: deployment
