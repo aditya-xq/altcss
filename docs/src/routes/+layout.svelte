@@ -29,8 +29,8 @@
   <main>
     <section>
       <nav>
-        <p><a href="/introduction">Introduction</a></p>
-        <p><a href="/installation">Installation</a></p>
+        <p><a href="./introduction">Introduction</a></p>
+        <p><a href="./installation">Installation</a></p>
       </nav>
     </section>
     <article>
