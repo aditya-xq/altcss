@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte"
   import { afterNavigate } from "$app/navigation"
+  import { base } from "$app/paths";
   let { children } = $props()
   let headings: HTMLHeadingElement[] = $state([])
   
@@ -28,8 +29,8 @@
   <main>
     <section>
       <nav>
-        <p><a href="/docs/introduction">Introduction</a></p>
-        <p><a href="/docs/installation">Installation</a></p>
+        <p><a href="{base}/docs/introduction">Introduction</a></p>
+        <p><a href="{base}/docs/installation">Installation</a></p>
       </nav>
     </section>
     <article>
