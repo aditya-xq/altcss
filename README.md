@@ -70,7 +70,7 @@ Here's a quick example to see AltCSS in action: https://aditya-xq.github.io/altc
 AltCSS is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## 🎉 Acknowledgments
-Special thanks to the Tailwind CSS community for their amazing work. Also, special mention to ChatGPT for being the awesome companion in helping with debugging, writing code and creative support.
+Special thanks to the Tailwind CSS community for their amazing work. Also, special mention to ChatGPT/Copilot/Cody for being the awesome companions in helping with debugging, writing code and creative support.
 
 ## Caution
 This project is frequently updated.
