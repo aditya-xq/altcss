@@ -1,22 +1,6 @@
 <script>
     // @ts-nocheck
-    import { base } from '$app/paths';
-    import { onMount } from 'svelte'
-    
-    let isDarkMode = $state(false)
-
-    onMount(() => {
-        if (typeof window !== 'undefined') {
-            isDarkMode = document.documentElement.classList.contains('dark')
-        }
-    });
-
-    function toggleTheme() {
-        isDarkMode = !isDarkMode;
-        if (typeof window !== 'undefined') {
-            document.documentElement.classList.toggle('dark')
-        }
-    }
+    import { base } from '$app/paths'
 </script>
 
 <svelte:head>
@@ -68,9 +52,6 @@
 <h1>🌈 Welcome to AltCSS</h1>
 <h2>Opinionated, Offbeat, Lightweight</h2>
 <h3>CSS Component Library</h3>
-<section>
-    <input checked={isDarkMode} type="checkbox" id="theme-toggle" onclick={toggleTheme}/>
-</section>
 <section>
     <p>This is a paragraph of text that explains something important. It's styled to be clean and readable in both light and dark mode.</p>
 </section>

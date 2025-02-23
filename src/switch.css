@@ -30,11 +30,11 @@ input[type="checkbox"]:checked::before {
 
 /* Theme toggle specific styles */
 #theme-toggle {
-    @apply appearance-none relative w-12 h-7 bg-gray-200 rounded-full cursor-pointer transition-all duration-300 ease-in-out dark:bg-gray-700;
+    @apply appearance-none fixed top-4 right-4 z-50 w-12 h-7 bg-gray-300 rounded-full cursor-pointer transition-all duration-300 ease-in-out dark:bg-gray-700;
 }
   
 #theme-toggle::before {
-    @apply content-[''] flex items-center justify-center absolute w-6 h-6 rounded-full top-0.5 left-0.5 bg-gray-700 transition-transform duration-300 ease-in-out;
+    @apply content-['🔆'] flex items-center justify-center absolute w-6 h-6 rounded-full top-0.5 left-0.5 bg-gray-800 transition-transform duration-300 ease-in-out;
 }
 
 #theme-toggle:checked {
@@ -48,7 +48,7 @@ input[type="checkbox"]:checked::before {
 /* Theme toggle mobile styles */
 @media (max-width: 640px) {
     #theme-toggle {
-        @apply w-10 h-6;
+        @apply w-10 h-6 bottom-6 right-4 top-auto;
     }
 
     #theme-toggle::before {

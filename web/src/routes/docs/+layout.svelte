@@ -23,7 +23,7 @@
 <div>
   <header>
     <h4>🌈 AltCSS Documentation</h4>
-    <nav><p><a href="{base}">🏠 Home</a></p></nav>
+    <nav><p><a href="{base}/">🏠 Home</a></p></nav>
   </header>
 
   <main>
