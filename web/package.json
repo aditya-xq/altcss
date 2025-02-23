@@ -33,7 +33,7 @@
     "vite": "^6.1.1"
   },
   "dependencies": {
-    "altcss": "^0.0.17",
+    "altcss": "^0.0.18",
     "rehype-slug": "^6.0.0"
   }
 }
