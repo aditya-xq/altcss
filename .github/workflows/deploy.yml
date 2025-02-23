@@ -43,6 +43,10 @@ jobs:
           
           # Ensure the built documentation exists before copying
           [ -d docs/build ] && cp -r docs/build/* deploy/docs/
+          
+          # Copy additional files for deployment
+          [ -f theme.js ] && cp theme.js deploy/
+          [ -f dist/alt.min.css ] && cp dist/alt.min.css deploy/
         shell: bash
 
       - name: Setup GitHub Pages
