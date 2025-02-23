@@ -4,6 +4,6 @@
     import { onMount } from "svelte";
 
     onMount(() => {
-        goto("../introduction")
+        goto("/docs/introduction")
     })
 </script>
