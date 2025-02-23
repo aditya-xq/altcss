@@ -1,0 +1,56 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Adjust if your default branch is different
+
+permissions:
+  contents: read  # Grants read access to repository content
+  pages: write    # Allows deployment to GitHub Pages
+  id-token: write # Enables OIDC authentication for secure deployment
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Fetch the latest code
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2  # Install Bun for package management
+
+      - name: Install dependencies for docs
+        run: bun install
+        working-directory: docs  # Ensure dependencies for documentation are installed
+
+      - name: Build SvelteKit docs with Bun
+        run: bun run build
+        working-directory: docs  # Build the documentation using SvelteKit
+
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p deploy/docs  # Ensure the deployment directory exists
+          
+          # Copy the root index.html only if it exists
+          [ -f index.html ] && cp index.html deploy/
+
+          # Copy assets folder if it exists
+          [ -d assets ] && cp -r assets deploy/
+          
+          # Ensure the built documentation exists before copying
+          [ -d docs/build ] && cp -r docs/build/* deploy/docs/
+        shell: bash
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v3  # Configure GitHub Pages for deployment
+
+      - name: Upload artifact for deployment
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: deploy  # Upload only the prepared deployment directory
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2  # Publish the site to GitHub Pages
