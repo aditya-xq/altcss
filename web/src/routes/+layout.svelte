@@ -1,8 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   
-  // import '../../../dist/alt.min.css'
-  import 'altcss/alt.min.css'
+  // Import the CSS based on environment
+  import { dev } from '$app/environment'
+  
+  // Use the appropriate import path
+  dev ? import('../../../dist/alt.min.css') : import('altcss/alt.min.css')
 
   let isDarkMode = $state(false)
   onMount(() => {
