@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "@tailwindcss/cli": "^4.0.8",
-    "tailwindcss": "^4.0.8"
+    "@tailwindcss/cli": "^4.1.5",
+    "tailwindcss": "^4.1.5"
   },
   "scripts": {
-    "build": "bunx @tailwindcss/cli@next -i app.css -o dist/alt.min.css --minify"
+    "build": "bunx @tailwindcss/cli -i app.css -o dist/alt.min.css --minify"
   },
   "devDependencies": {
-    "prettier": "^3.5.2",
+    "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }

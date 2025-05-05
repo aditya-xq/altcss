@@ -1,0 +1,64 @@
+/* tabs.css */
+
+/* Container structure:
+    <div>
+        <input type="radio" name="tabs" id="tab1" checked>
+        <input type="radio" name="tabs" id="tab2">
+        <input type="radio" name="tabs" id="tab3">
+        <nav>
+            <label for="tab1">Tab 1</label>
+            <label for="tab2">Tab 2</label>
+            <label for="tab3">Tab 3</label>
+            <label for="tab4">Tab 4</label>
+        </nav>
+        <section>Content for Tab 1</section>
+        <section>Content for Tab 2</section>
+        <section>Content for Tab 3</section>
+        <section>Content for Tab 4</section>
+    </div>
+*/
+
+/* Hide the radios */
+div > input[type="radio"] {
+    @apply hidden;
+}
+
+/* Tab list (labels container) */
+div > nav {
+    @apply flex flex-col mx-4 sm:flex-row border rounded-lg border-gray-500 dark:border-gray-700;
+}
+
+/* Each tab label */
+div > nav > label {
+    @apply flex-1 min-w-0 text-xl sm:text-lg truncate text-center rounded-lg p-2 sm:py-3 sm:px-4 cursor-pointer select-none
+            text-gray-800 dark:text-gray-300
+            hover:text-yellow-700 dark:hover:text-yellow-400
+            transition-colors duration-200;
+}
+
+/* Active tab label */
+#tab1:checked ~ nav > label[for="tab1"],
+#tab2:checked ~ nav > label[for="tab2"],
+#tab3:checked ~ nav > label[for="tab3"],
+#tab4:checked ~ nav > label[for="tab4"] {
+    @apply border-2 border-yellow-600 dark:border-yellow-400
+            text-yellow-600 dark:text-yellow-400
+            font-medium;
+}
+
+/* Panels (all hidden by default) */
+div > input[type="radio"]:first-of-type ~ section {
+    @apply hidden mx-4 px-4 py-2
+           text-gray-800 dark:text-gray-200
+           rounded-b-lg
+           space-y-2
+           transition-opacity duration-300 ease-in-out opacity-0;
+}
+
+/* Show the panel that matches the checked radio */
+#tab1:checked ~ section:nth-of-type(1),
+#tab2:checked ~ section:nth-of-type(2),
+#tab3:checked ~ section:nth-of-type(3),
+#tab4:checked ~ section:nth-of-type(4) {
+    @apply block opacity-100;
+}
