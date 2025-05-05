@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "@tailwindcss/cli": "^4.1.5",
-    "altcss": "^0.0.21",
     "tailwindcss": "^4.1.5"
   },
   "scripts": {
