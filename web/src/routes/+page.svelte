@@ -56,6 +56,21 @@
     <p>This is a paragraph of text that explains something important. It's styled to be clean and readable in both light and dark mode.</p>
 </section>
 <section>
+    <div>
+        <input type="radio" name="tabs" id="tab1" checked>
+        <input type="radio" name="tabs" id="tab2">
+        <input type="radio" name="tabs" id="tab3">
+        <nav>
+            <label for="tab1">This is a tab</label>
+            <label for="tab2">Another tab</label>
+            <label for="tab3">Yet another one</label>
+        </nav>
+        <section><p>Hello world</p></section>
+        <section><p>It's made of pure HTML</p></section>
+        <section><p>It's responsive too!</p></section>
+    </div>
+</section>
+<section>
     <article>
         <figure>
             <figcaption>
