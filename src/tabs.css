@@ -5,6 +5,7 @@
         <input type="radio" name="tabs" id="tab1" checked>
         <input type="radio" name="tabs" id="tab2">
         <input type="radio" name="tabs" id="tab3">
+        <input type="radio" name="tabs" id="tab4">
         <nav>
             <label for="tab1">Tab 1</label>
             <label for="tab2">Tab 2</label>
@@ -25,7 +26,7 @@ div > input[type="radio"] {
 
 /* Tab list (labels container) */
 div > nav {
-    @apply flex flex-col mx-4 sm:flex-row border rounded-lg border-gray-500 dark:border-gray-700;
+    @apply flex flex-col sm:flex-row border rounded-lg border-gray-500 dark:border-gray-700;
 }
 
 /* Each tab label */
