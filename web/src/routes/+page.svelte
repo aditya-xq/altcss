@@ -1,6 +1,9 @@
 <script>
     // @ts-nocheck
     import { base } from '$app/paths'
+    let dialogRef1 = $state(false)
+    let dialogRef2 = $state(false)
+    let dialogRef3 = $state(false)
 </script>
 
 <svelte:head>
@@ -56,6 +59,19 @@
     <p>This is a paragraph of text that explains something important. It's styled to be clean and readable in both light and dark mode.</p>
 </section>
 <section>
+    <p>Here are some clean buttons. Click them for a surprise!</p>
+    <!-- Trigger Button -->
+    <button data-variant="primary" onclick={() => dialogRef1.showModal()}>
+        Primary
+    </button>
+    <button data-variant="secondary" onclick={() => dialogRef2.showModal()}>
+        Secondary
+    </button>
+    <button data-variant="tertiary" onclick={() => dialogRef3.showModal()}>
+        Tertiary
+    </button>
+</section>
+<section>
     <div>
         <input type="radio" name="tabs" id="tab1" checked>
         <input type="radio" name="tabs" id="tab2">
@@ -98,6 +114,56 @@
         </figure>
     </article>
 </section>
+
+<!-- Native Dialog Popup -->
+<dialog bind:this={dialogRef1} size="s">
+    <form method="dialog">
+        <header>
+            <h5>A smol popup appeared!</h5>
+            <button type="button" onclick={() => dialogRef1.close()}>✕</button>
+        </header>
+        <section>
+            <p>This is a minimal popup dialog box. It is ideal for binary userflows to confirm or cancel something.</p>
+        </section>
+        <!-- Optional footer -->
+        <footer>
+            <button data-variant="tertiary" value="cancel">Cancel</button>
+            <button data-variant="primary" value="confirm">Confirm</button>
+        </footer>
+    </form>
+</dialog>
+<dialog bind:this={dialogRef2} size="m">
+    <form method="dialog">
+        <header>
+            <h5>You have opened a medium sized popup!</h5>
+            <button type="button" onclick={() => dialogRef2.close()}>✕</button>
+        </header>
+        <section>
+            <p>This is ideal for more descriptive messages and some form field configurations.</p>
+        </section>
+        <!-- Optional footer -->
+        <footer>
+            <button data-variant="tertiary" value="cancel">Cancel</button>
+            <button data-variant="primary" value="confirm">Confirm</button>
+        </footer>
+    </form>
+</dialog>
+<dialog bind:this={dialogRef3} size="l">
+    <form method="dialog">
+        <header>
+            <h5>This is a large popup!</h5>
+            <button type="button" onclick={() => dialogRef3.close()}>✕</button>
+        </header>
+        <section>
+            <p>Perfect for settings, forms and data intensive userflows.</p>
+        </section>
+        <footer>
+            <button data-variant="tertiary" value="cancel">Cancel</button>
+            <button data-variant="primary" value="confirm">Confirm</button>
+        </footer>
+    </form>
+</dialog>
+
 <footer>
     <p>Made with 🌈 by <a href="https://github.com/aditya-xq">aditya-xq</a></p>
     <p>Licensed under MIT</p>
