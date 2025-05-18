@@ -1,0 +1,118 @@
+/* popup.css - Minimal Design */
+
+/* Container structure:
+    <dialog bind:this={dialogRef} size="s|m|l">
+        <form method="dialog">
+            <header>
+                <h5>Popup Title</h5>
+                <button type="button" onclick={() => dialogRef.close()}>✕</button>
+            </header>
+            <section>
+                <p>This is a minimal popup dialog with a close button.</p>
+            </section>
+            <!-- Optional footer -->
+            <footer>
+                <button value="cancel">Cancel</button>
+                <button value="confirm">Confirm</button>
+            </footer>
+        </form>
+    </dialog>
+*/
+
+/* Base dialog styling */
+dialog {
+    @apply fixed top-1/2 left-1/2 p-0
+           w-[calc(100%-2rem)] max-w-md rounded-lg border-0;
+    @apply bg-white text-zinc-800 dark:bg-black dark:text-zinc-100;
+    @apply border border-solid border-zinc-200/80 dark:border-zinc-700/80;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translate(-50%, -50%);
+    
+    &:not([open]) {
+        display: none;
+    }
+}
+  
+/* Backdrop styling */
+dialog::backdrop {
+    @apply bg-black/25 dark:bg-black/40 backdrop-blur-[2px];
+}
+
+/* Popup Sizing Options using size attribute */
+dialog[size="s"] {
+    @apply max-w-lg;
+}
+dialog[size="m"] {
+    @apply max-w-2xl;
+}
+dialog[size="l"] {
+    @apply max-w-4xl;
+}
+
+/* Form styling */
+dialog form {
+    @apply flex flex-col relative
+            max-h-[calc(100vh-4rem)] overflow-hidden;
+    border-radius: inherit;
+}
+
+/* HEADER */
+dialog form > header {
+    @apply sticky top-0 z-10 flex justify-between items-center 
+            px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/90;
+}
+
+dialog form > header button[type="button"] {
+    @apply text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200
+            transition-colors p-2.5 -mr-1.5 rounded-full
+            hover:bg-zinc-100 dark:hover:bg-zinc-800/90;
+    line-height: 0;
+    font-size: 0.9rem;
+}
+
+/* BODY */
+dialog form > section {
+    @apply p-6 m-0 text-zinc-700 dark:text-zinc-300 overflow-auto;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+dialog form > footer {
+    @apply sticky bottom-0 z-10 flex justify-end gap-3 px-6 py-4
+            border-t border-zinc-100 dark:border-zinc-800/90;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+    dialog {
+        @apply w-[calc(100%-1.5rem)] max-h-[calc(100vh-2rem)] rounded-md;
+    }
+
+    dialog form {
+        @apply max-h-[calc(100vh-2rem)];
+    }
+
+    dialog form > header,
+    dialog form > section,
+    dialog form > footer {
+        @apply px-5;
+    }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+    dialog {
+        @apply max-h-[calc(100vh-1.5rem)];
+    }
+
+    dialog form > header {
+        @apply py-3;
+    }
+
+    dialog form > section {
+        @apply py-3;
+    }
+
+    dialog form > footer {
+        @apply py-2;
+    }
+}
