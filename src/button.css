@@ -1,0 +1,136 @@
+/* button.css - Sleek, Minimal, Modern Design */
+
+/* Container structure:
+    <button data-variant="primary">Primary Button</button>
+    <button data-variant="secondary">Secondary Button</button>
+    <button data-variant="tertiary">Tertiary Button</button>
+*/
+
+button {
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-all cursor-pointer focus:outline-none;
+    padding: 0.5rem 1rem; /* Smaller default for mobile */
+    font-size: 0.875rem; /* Smaller font for mobile */
+    margin: 0.375rem 0.375rem 0.375rem 0;
+    position: relative;
+    max-width: 100%; /* Prevent overflow on small screens */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button:focus-visible {
+    @apply ring-2 ring-offset-1 ring-offset-white dark:ring-offset-black;
+}
+
+button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+/* Primary Button */
+button[data-variant="primary"] {
+    @apply bg-yellow-400 text-gray-900 hover:bg-yellow-500 focus-visible:ring-yellow-300 
+           dark:bg-yellow-400 dark:text-gray-900 dark:hover:bg-yellow-500 dark:focus-visible:ring-yellow-300;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transform: translateY(0);
+    transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+button[data-variant="primary"]:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+button[data-variant="primary"]:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Secondary Button */
+button[data-variant="secondary"] {
+    @apply bg-transparent border border-gray-200 text-gray-700 hover:border-yellow-400 hover:text-yellow-500 focus-visible:ring-gray-200 
+           dark:border-gray-700 dark:text-gray-300 dark:hover:border-yellow-400 dark:hover:text-yellow-400 dark:focus-visible:ring-gray-700;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Tertiary Button */
+button[data-variant="tertiary"] {
+    @apply bg-transparent text-gray-700 hover:text-yellow-500 focus-visible:ring-transparent 
+           dark:text-gray-400 dark:hover:text-yellow-400;
+    padding: 0.375rem 0.75rem; /* Smaller padding for tertiary on mobile */
+    transition: color 0.2s ease;
+}
+
+/* Button with icon */
+button svg {
+    @apply w-3.5 h-3.5 mr-1; /* Smaller icons for mobile */
+}
+
+/* Full width button on smallest screens */
+button[data-full-mobile="true"] {
+    @apply w-full justify-center;
+}
+
+/* Responsive adjustments - Small devices (480px and up) */
+@media (min-width: 480px) {
+    button {
+        padding: 0.5625rem 1.125rem;
+        font-size: 0.9rem;
+        margin: 0.4375rem 0.4375rem 0.4375rem 0;
+    }
+    
+    button[data-variant="tertiary"] {
+        padding: 0.4375rem 0.875rem;
+    }
+    
+    button svg {
+        @apply w-3.5 h-3.5 mr-1.25;
+    }
+}
+
+/* Responsive adjustments - Medium devices (768px and up) */
+@media (min-width: 768px) {
+    button {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9375rem;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+    }
+    
+    button[data-variant="tertiary"] {
+        padding: 0.5rem 1rem;
+    }
+    
+    button svg {
+        @apply w-4 h-4 mr-1.5;
+    }
+    
+    /* Remove full width on larger screens if needed */
+    button[data-full-mobile="true"] {
+        @apply w-auto;
+    }
+}
+
+/* Responsive adjustments - Large devices (1024px and up) */
+@media (min-width: 1024px) {
+    button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    button[data-variant="tertiary"] {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Responsive adjustments - Extra large devices (1280px and up) */
+@media (min-width: 1280px) {
+    button {
+        padding: 0.875rem 1.75rem;
+        font-size: 1.0625rem;
+    }
+    
+    button[data-variant="tertiary"] {
+        padding: 0.625rem 1.25rem;
+    }
+    
+    button svg {
+        @apply w-4.5 h-4.5 mr-2;
+    }
+}
