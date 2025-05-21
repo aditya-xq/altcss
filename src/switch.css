@@ -1,61 +1,45 @@
-input[type="checkbox"] {
+/* Theme toggle specific styles - using ID selector for specificity */
+input[type="checkbox"]#theme-toggle {
     @apply appearance-none relative w-12 h-7 bg-gray-200 rounded-full cursor-pointer transition-all duration-300 ease-in-out dark:bg-gray-700;
+    /* Override any checkbox.css styles */
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 50;
+    opacity: 1;
+    height: 1.75rem;
+    width: 3rem;
 }
   
-input[type="checkbox"]::before {
-    @apply content-[''] absolute w-6 h-6 rounded-full top-0.5 left-0.5 bg-gray-400 transition-transform duration-300 ease-in-out;
-}
-
-input[type="checkbox"]:checked {
-    @apply bg-yellow-400 dark:bg-yellow-300;
-}
-  
-input[type="checkbox"]:checked::before {
-    @apply translate-x-5 bg-gray-100;
-}
-
-@media (max-width: 640px) {
-    input[type="checkbox"] {
-        @apply w-10 h-6;
-    }
-
-    input[type="checkbox"]::before {
-        @apply w-5 h-5;
-    }
-
-    input[type="checkbox"]:checked::before {
-        @apply translate-x-4;
-    }
-}
-
-/* Theme toggle specific styles */
-#theme-toggle {
-    @apply appearance-none fixed top-4 right-4 z-50 w-12 h-7 bg-gray-300 rounded-full cursor-pointer transition-all duration-300 ease-in-out dark:bg-gray-700;
-}
-  
-#theme-toggle::before {
+input[type="checkbox"]#theme-toggle::before {
     @apply content-['🔆'] flex items-center justify-center absolute w-6 h-6 rounded-full top-0.5 left-0.5 bg-gray-800 transition-transform duration-300 ease-in-out;
 }
 
-#theme-toggle:checked {
+input[type="checkbox"]#theme-toggle:checked {
     @apply bg-yellow-400 dark:bg-yellow-300;
 }
   
-#theme-toggle:checked::before {
+input[type="checkbox"]#theme-toggle:checked::before {
     @apply translate-x-5 bg-gray-800 content-['🌙'];
 }
 
 /* Theme toggle mobile styles */
 @media (max-width: 640px) {
-    #theme-toggle {
-        @apply w-10 h-6 bottom-6 right-4 top-auto;
+    input[type="checkbox"]#theme-toggle {
+        @apply w-10 h-6;
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1rem;
+        top: auto;
+        height: 1.5rem;
+        width: 2.5rem;
     }
 
-    #theme-toggle::before {
+    input[type="checkbox"]#theme-toggle::before {
         @apply w-5 h-5 text-xs;
     }
 
-    #theme-toggle:checked::before {
+    input[type="checkbox"]#theme-toggle:checked::before {
         @apply translate-x-4;
     }
 }

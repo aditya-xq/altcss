@@ -26,12 +26,13 @@ div > input[type="radio"] {
 
 /* Tab list (labels container) */
 div > nav {
-    @apply flex flex-row border rounded-xl border-gray-500 dark:border-gray-700;
+    @apply flex flex-row;
 }
 
 /* Each tab label */
 div > nav > label {
-    @apply flex-1 min-w-0 text-sm sm:text-lg md:text-xl truncate text-center rounded-xl p-2 sm:py-3 sm:px-4 cursor-pointer select-none
+    @apply flex-1 min-w-0 text-sm sm:text-lg md:text-xl truncate text-center rounded-xl p-2 my-2 mr-4 sm:py-3 sm:px-4 cursor-pointer select-none
+            border border-gray-500 dark:border-gray-700
             text-gray-800 dark:text-gray-300
             hover:text-yellow-700 dark:hover:text-yellow-400
             transition-colors duration-200;

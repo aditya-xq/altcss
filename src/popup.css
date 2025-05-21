@@ -4,7 +4,7 @@
     <dialog bind:this={dialogRef} size="s|m|l">
         <form method="dialog">
             <header>
-                <h5>Popup Title</h5>
+                <h4>Popup Title</h4>
                 <button type="button" onclick={() => dialogRef.close()}>✕</button>
             </header>
             <section>
@@ -62,18 +62,28 @@ dialog form > header {
             px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/90;
 }
 
+dialog form > header h4 {
+    @apply truncate;
+    max-width: calc(100% - 40px);
+}
+
 dialog form > header button[type="button"] {
     @apply text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200
             transition-colors p-2.5 -mr-1.5 rounded-full
             hover:bg-zinc-100 dark:hover:bg-zinc-800/90;
     line-height: 0;
     font-size: 0.9rem;
+    min-width: 32px; /* Ensure touch target size */
+    min-height: 32px; /* Ensure touch target size */
 }
 
 /* BODY */
 dialog form > section {
     @apply p-6 m-0 text-zinc-700 dark:text-zinc-300 overflow-auto;
     line-height: 1.6;
+    /* Ensure content doesn't overflow on small screens */
+    word-break: break-word;
+    hyphens: auto;
 }
 
 /* FOOTER */
@@ -82,8 +92,38 @@ dialog form > footer {
             border-t border-zinc-100 dark:border-zinc-800/90;
 }
 
-/* RESPONSIVE */
-@media (max-width: 640px) {
+dialog form > footer button {
+    @apply px-4 py-2 rounded-md transition-colors text-sm sm:text-base;
+    min-height: 36px; /* Ensure touch target size */
+}
+
+/* RESPONSIVE - Extra Small Screens */
+@media (max-width: 360px) {
+    dialog {
+        @apply w-[calc(100%-1rem)] max-h-[calc(100vh-1rem)] rounded;
+    }
+
+    dialog form {
+        @apply max-h-[calc(100vh-1rem)];
+    }
+
+    dialog form > header,
+    dialog form > section,
+    dialog form > footer {
+        @apply px-4 py-3;
+    }
+    
+    dialog form > footer {
+        @apply flex-col gap-2;
+    }
+    
+    dialog form > footer button {
+        @apply w-full;
+    }
+}
+
+/* RESPONSIVE - Small Screens */
+@media (min-width: 361px) and (max-width: 640px) {
     dialog {
         @apply w-[calc(100%-1.5rem)] max-h-[calc(100vh-2rem)] rounded-md;
     }
@@ -97,22 +137,89 @@ dialog form > footer {
     dialog form > footer {
         @apply px-5;
     }
+    
+    /* Stack buttons vertically on narrow screens */
+    @media (max-width: 480px) {
+        dialog form > footer {
+            @apply flex-col gap-2;
+        }
+        
+        dialog form > footer button {
+            @apply w-full;
+        }
+    }
 }
 
+/* RESPONSIVE - Medium Screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+    dialog[size="l"] {
+        @apply max-w-3xl; /* Slightly smaller on medium screens */
+    }
+    
+    dialog form > section {
+        @apply max-h-[60vh]; /* Limit content height on medium screens */
+    }
+}
+
+/* RESPONSIVE - Landscape Mode */
 @media (max-height: 480px) and (orientation: landscape) {
     dialog {
         @apply max-h-[calc(100vh-1.5rem)];
     }
 
+    dialog form {
+        @apply flex-row max-h-[calc(100vh-1.5rem)];
+    }
+    
     dialog form > header {
-        @apply py-3;
+        @apply py-3 border-b-0 border-r border-zinc-100 dark:border-zinc-800/90
+               w-1/3 flex-shrink-0 flex-col items-start;
+    }
+    
+    dialog form > header h4 {
+        @apply mb-2;
+    }
+    
+    dialog form > header button[type="button"] {
+        @apply absolute top-2 right-2;
     }
 
     dialog form > section {
-        @apply py-3;
+        @apply py-3 flex-grow overflow-auto;
     }
 
     dialog form > footer {
-        @apply py-2;
+        @apply py-2 border-t-0 border-l border-zinc-100 dark:border-zinc-800/90
+               w-1/4 flex-shrink-0 flex-col justify-center;
+    }
+    
+    dialog form > footer button {
+        @apply w-full;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    dialog form > header button[type="button"],
+    dialog form > footer button {
+        @apply p-3; /* Larger touch targets */
+    }
+    
+    /* Add more space between interactive elements */
+    dialog form > footer {
+        @apply gap-4;
+    }
+}
+
+/* High-resolution screens */
+@media (min-width: 1920px) {
+    dialog[size="l"] {
+        @apply max-w-5xl; /* Larger on very big screens */
+    }
+    
+    dialog form > header,
+    dialog form > section,
+    dialog form > footer {
+        @apply px-8 py-5; /* More padding on large screens */
     }
 }
