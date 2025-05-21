@@ -114,12 +114,59 @@
         </figure>
     </article>
 </section>
-
+<section>
+    <label for="input-id">Name</label>
+    <input type="text" id="input-id" placeholder="Type here">
+    <label for="textarea-id">A feature you would like to see in AltCSS</label>
+    <textarea id="textarea-id" placeholder="Write something random..."></textarea>
+</section>
+<section>
+    <p>Here are some checkboxes:</p>
+    <div>
+        <label>
+            <input type="checkbox">
+            <span>Awesome</span>
+        </label>
+        <label>
+            <input type="checkbox" checked>
+            <span>Incredible</span>
+        </label>
+        <label>
+            <input type="checkbox" disabled>
+            <span>Disabled</span>
+        </label>
+        <label>
+            <input type="checkbox">
+            <span>Check me!</span>
+        </label>
+    </div>
+</section>
+<section>
+    <p>What do you think of AltCSS?</p>
+    <div>
+        <label>
+            <input type="radio" name="radioGroup" value="option1">
+            <span>It's unique</span>
+        </label>
+        <label>
+            <input type="radio" name="radioGroup" value="option2">
+            <span>Fascinating take</span>
+        </label>
+        <label>
+            <input type="radio" name="radioGroup" value="option3" disabled>
+            <span>It's meh!</span>
+        </label>
+        <label>
+            <input type="radio" name="radioGroup" value="option4">
+            <span>Something different</span>
+        </label>
+    </div>
+</section>
 <!-- Native Dialog Popup -->
 <dialog bind:this={dialogRef1} size="s">
     <form method="dialog">
         <header>
-            <h5>A smol popup appeared!</h5>
+            <h4>A smol popup appeared!</h4>
             <button type="button" onclick={() => dialogRef1.close()}>✕</button>
         </header>
         <section>
@@ -135,7 +182,7 @@
 <dialog bind:this={dialogRef2} size="m">
     <form method="dialog">
         <header>
-            <h5>You have opened a medium sized popup!</h5>
+            <h4>You have opened a medium sized popup!</h4>
             <button type="button" onclick={() => dialogRef2.close()}>✕</button>
         </header>
         <section>
@@ -151,7 +198,7 @@
 <dialog bind:this={dialogRef3} size="l">
     <form method="dialog">
         <header>
-            <h5>This is a large popup!</h5>
+            <h4>This is a large popup!</h4>
             <button type="button" onclick={() => dialogRef3.close()}>✕</button>
         </header>
         <section>
