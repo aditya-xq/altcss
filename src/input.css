@@ -1,0 +1,116 @@
+/* input.css - Sleek, Minimal, Modern Design */
+
+/* Container structure:
+    <label for="input-id">Label Text</label>
+    <input type="text" id="input-id" placeholder="Standard input">
+    
+    <label for="disabled-input">Label Text</label>
+    <input type="text" id="disabled-input" disabled placeholder="Disabled input">
+    
+    <label for="textarea-id">Label Text</label>
+    <textarea id="textarea-id" placeholder="Standard textarea"></textarea>
+    
+    <label for="disabled-textarea">Label Text</label>
+    <textarea id="disabled-textarea" disabled placeholder="Disabled textarea"></textarea>
+*/
+
+/* Label styling - only for labels that are followed by form inputs */
+label:has(+ input),
+label:has(+ textarea) {
+    @apply block font-medium mb-2 text-sm text-gray-700 dark:text-gray-200;
+}
+
+/* Required field indicator */
+label:has(+ input[required])::after,
+label:has(+ textarea[required])::after {
+    @apply content-["*"] text-red-500 ml-1;
+}
+
+/* Base input styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+textarea {
+    @apply block w-full rounded-md font-medium transition-all focus:outline-none mb-6 py-2.5 px-3.5 text-[0.9375rem] my-2 
+    bg-transparent border border-gray-200 text-gray-900 dark:border-gray-700 dark:text-gray-100;
+}
+
+/* Focus state */
+input:focus-visible,
+textarea:focus-visible {
+    @apply border-yellow-400 ring-yellow-400 dark:ring-offset-gray-900 dark:border-yellow-400;
+}
+
+/* Disabled state */
+input:disabled,
+textarea:disabled {
+    @apply opacity-50 cursor-not-allowed bg-gray-100 dark:bg-gray-800;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+    @apply text-gray-400 dark:text-gray-500;
+}
+
+/* Textarea specific styling */
+textarea {
+    @apply min-h-[100px] resize-y;
+}
+
+/* Responsive adjustments - Medium devices (768px and up) */
+@media (min-width: 768px) {
+    label:has(+ input),
+    label:has(+ textarea) {
+        @apply text-base;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    textarea {
+        @apply py-3 px-4 text-base;
+    }
+}
+
+/* Responsive adjustments - Large devices (1024px and up) */
+@media (min-width: 1024px) {
+    label:has(+ input),
+    label:has(+ textarea) {
+        @apply text-lg;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    textarea {
+        @apply py-3.5 px-5 text-[1.0625rem];
+    }
+}
