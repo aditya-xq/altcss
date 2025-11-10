@@ -59,6 +59,65 @@
     <p>This is a paragraph of text that explains something important. It's styled to be clean and readable in both light and dark mode.</p>
 </section>
 <section>
+    <div id="a-carousal">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <input type="radio" name="slider" id="slide5">
+        <input type="radio" name="slider" id="slide6">
+        <div>
+            <div>
+                <h2>Slide 1</h2>
+                <p>Here's a pure HTML & CSS carousel!</p>
+            </div>
+            <div>
+                <h2>Slide 2</h2>
+                <p>Using radio buttons</p>
+            </div>
+            <div>
+                <h2>Slide 3</h2>
+                <p>CSS :checked selector magic</p>
+            </div>
+            <div>
+                <h2>Slide 4</h2>
+                <p>No JavaScript required!</p>
+            </div>
+            <div>
+                <h2>Slide 5</h2>
+                <p>Supports up to 6 slides</p>
+            </div>
+            <div>
+                <h2>Slide 6</h2>
+                <p>Pure semantic HTML structure</p>
+            </div>
+        </div>
+        <!-- Previous Buttons -->
+        <label for="slide6">‹</label>
+        <label for="slide1">‹</label>
+        <label for="slide2">‹</label>
+        <label for="slide3">‹</label>
+        <label for="slide4">‹</label>
+        <label for="slide5">‹</label>
+        <!-- Next Buttons -->
+        <label for="slide2">›</label>
+        <label for="slide3">›</label>
+        <label for="slide4">›</label>
+        <label for="slide5">›</label>
+        <label for="slide6">›</label>
+        <label for="slide1">›</label>
+        <!-- Indicator Dots -->
+        <div>
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+            <label for="slide5"></label>
+            <label for="slide6"></label>
+        </div>
+    </div>
+</section>
+<section>
     <p>Here are some clean buttons. Click them for a surprise!</p>
     <!-- Trigger Button -->
     <button data-variant="primary" onclick={() => dialogRef1.showModal()}>
