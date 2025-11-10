@@ -1,0 +1,335 @@
+/* carousel.css */
+
+/* Container structure:
+    <div id="a-carousal">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <input type="radio" name="slider" id="slide5">
+        <input type="radio" name="slider" id="slide6">
+        <div>
+            <div>Slide 1 content</div>
+            <div>Slide 2 content</div>
+            <div>Slide 3 content</div>
+            <div>Slide 4 content</div>
+            <div>Slide 5 content</div>
+            <div>Slide 6 content</div>
+        </div>
+        <!-- Previous Buttons -->
+        <label for="slide6">‹</label>
+        <label for="slide1">‹</label>
+        <label for="slide2">‹</label>
+        <label for="slide3">‹</label>
+        <label for="slide4">‹</label>
+        <label for="slide5">‹</label>
+        
+        <!-- Next Buttons -->
+        <label for="slide2">›</label>
+        <label for="slide3">›</label>
+        <label for="slide4">›</label>
+        <label for="slide5">›</label>
+        <label for="slide6">›</label>
+        <label for="slide1">›</label>
+        
+        <!-- Indicator Dots -->
+        <div>
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+            <label for="slide5"></label>
+            <label for="slide6"></label>
+        </div>
+    </div>
+*/
+
+/* Hide radio buttons */
+#a-carousal input[type="radio"] {
+    @apply hidden;
+}
+
+/* Carousel wrapper */
+#a-carousal {
+    @apply w-full max-w-3xl relative overflow-hidden rounded-lg
+           border border-zinc-200/80 dark:border-zinc-700/80;
+    @apply bg-zinc-50 dark:bg-black;
+}
+
+/* Carousel container - slides wrapper */
+#a-carousal > div:first-of-type {
+    @apply flex transition-transform duration-500 ease-in-out;
+}
+
+/* Slides - all content inside carousel container */
+#a-carousal > div:first-of-type > * {
+    @apply min-w-full h-[500px] flex items-center justify-center flex-col p-10 box-border flex-shrink-0;
+}
+
+#a-carousal > div:first-of-type > *:nth-child(1),
+#a-carousal > div:first-of-type > *:nth-child(2),
+#a-carousal > div:first-of-type > *:nth-child(3),
+#a-carousal > div:first-of-type > *:nth-child(4),
+#a-carousal > div:first-of-type > *:nth-child(5),
+#a-carousal > div:first-of-type > *:nth-child(6) {
+    @apply bg-zinc-100 dark:bg-black;
+}
+
+/* Typography defaults for slide content */
+#a-carousal > div:first-of-type > * h1,
+#a-carousal > div:first-of-type > * h2,
+#a-carousal > div:first-of-type > * h3 {
+    @apply m-0 mb-5 font-bold text-zinc-800 dark:text-zinc-200;
+}
+
+#a-carousal > div:first-of-type > * h2 {
+    @apply text-4xl sm:text-5xl;
+}
+
+#a-carousal > div:first-of-type > * p {
+    @apply m-0 text-lg sm:text-xl text-center text-zinc-800 dark:text-zinc-300;
+}
+
+#a-carousal > div:first-of-type > * img {
+    @apply max-w-full max-h-full object-contain;
+}
+
+/* Navigation buttons - labels */
+#a-carousal > label {
+    @apply absolute top-1/2 -translate-y-1/2 cursor-pointer select-none
+           w-10 h-10 sm:w-12 sm:h-12 rounded-full hidden items-center justify-center
+           text-xl sm:text-2xl z-10 backdrop-blur-sm
+           border border-yellow-200/50 dark:border-yellow-800/35
+           text-yellow-600 dark:text-yellow-400
+           transition-all duration-200;
+}
+
+/* Previous buttons (labels 1-6) */
+#a-carousal > label:nth-of-type(1),
+#a-carousal > label:nth-of-type(2),
+#a-carousal > label:nth-of-type(3),
+#a-carousal > label:nth-of-type(4),
+#a-carousal > label:nth-of-type(5),
+#a-carousal > label:nth-of-type(6) {
+    @apply left-3 sm:left-5;
+}
+
+/* Next buttons (labels 7-12) */
+#a-carousal > label:nth-of-type(7),
+#a-carousal > label:nth-of-type(8),
+#a-carousal > label:nth-of-type(9),
+#a-carousal > label:nth-of-type(10),
+#a-carousal > label:nth-of-type(11),
+#a-carousal > label:nth-of-type(12) {
+    @apply right-3 sm:right-5;
+}
+
+/* Indicators container - last div */
+#a-carousal > div:last-of-type {
+    @apply absolute bottom-4 sm:bottom-5 left-1/2 -translate-x-1/2 
+           flex gap-2 sm:gap-2.5 z-10;
+}
+
+/* Indicator dots */
+#a-carousal > div:last-of-type > label {
+    @apply w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full cursor-pointer
+           border border-yellow-700 dark:border-yellow-400
+           transition-all duration-200;
+}
+
+/* Make checked radio reveal nav buttons with accent styling */
+#a-carousal > input[type="radio"]:checked ~ label {
+    @apply text-yellow-600 dark:text-yellow-400;
+}
+
+#a-carousal #slide1:checked ~ label:nth-of-type(1),
+#a-carousal #slide1:checked ~ label:nth-of-type(7),
+#a-carousal #slide2:checked ~ label:nth-of-type(2),
+#a-carousal #slide2:checked ~ label:nth-of-type(8),
+#a-carousal #slide3:checked ~ label:nth-of-type(3),
+#a-carousal #slide3:checked ~ label:nth-of-type(9),
+#a-carousal #slide4:checked ~ label:nth-of-type(4),
+#a-carousal #slide4:checked ~ label:nth-of-type(10),
+#a-carousal #slide5:checked ~ label:nth-of-type(5),
+#a-carousal #slide5:checked ~ label:nth-of-type(11),
+#a-carousal #slide6:checked ~ label:nth-of-type(6),
+#a-carousal #slide6:checked ~ label:nth-of-type(12) {
+    @apply flex;
+    @apply border border-yellow-700 dark:border-yellow-400 text-yellow-700 dark:text-yellow-400;
+}
+
+#a-carousal #slide1:checked ~ div:last-of-type > label:nth-child(1),
+#a-carousal #slide2:checked ~ div:last-of-type > label:nth-child(2),
+#a-carousal #slide3:checked ~ div:last-of-type > label:nth-child(3),
+#a-carousal #slide4:checked ~ div:last-of-type > label:nth-child(4),
+#a-carousal #slide5:checked ~ div:last-of-type > label:nth-child(5),
+#a-carousal #slide6:checked ~ div:last-of-type > label:nth-child(6) {
+    @apply bg-yellow-700 dark:bg-yellow-400 w-6 sm:w-8 rounded-md;
+}
+
+/* Slide 1 Active */
+#a-carousal #slide1:checked ~ div:first-of-type {
+    @apply translate-x-0;
+}
+
+/* Slide 2 Active */
+#a-carousal #slide2:checked ~ div:first-of-type {
+    transform: translateX(-100%);
+}
+
+/* Slide 3 Active */
+#a-carousal #slide3:checked ~ div:first-of-type {
+    transform: translateX(-200%);
+}
+
+/* Slide 4 Active */
+#a-carousal #slide4:checked ~ div:first-of-type {
+    transform: translateX(-300%);
+}
+
+/* Slide 5 Active */
+#a-carousal #slide5:checked ~ div:first-of-type {
+    transform: translateX(-400%);
+}
+
+/* Slide 6 Active */
+#a-carousal #slide6:checked ~ div:first-of-type {
+    transform: translateX(-500%);
+}
+
+/* Hover effects */
+#a-carousal > label:hover {
+    @apply scale-110;
+}
+
+#a-carousal > div:last-of-type > label:hover {
+    @apply scale-125;
+}
+
+/* RESPONSIVE - Extra Small Screens */
+@media (max-width: 360px) {
+    #a-carousal {
+        @apply rounded;
+    }
+
+    #a-carousal > div:first-of-type > * {
+        @apply h-[400px] p-6;
+    }
+
+    #a-carousal > div:first-of-type > * h2 {
+        @apply text-3xl;
+    }
+
+    #a-carousal > div:first-of-type > * p {
+        @apply text-base;
+    }
+
+    #a-carousal > label {
+        @apply w-8 h-8 text-lg;
+    }
+
+    #a-carousal > label:nth-of-type(1),
+    #a-carousal > label:nth-of-type(2),
+    #a-carousal > label:nth-of-type(3),
+    #a-carousal > label:nth-of-type(4),
+    #a-carousal > label:nth-of-type(5),
+    #a-carousal > label:nth-of-type(6) {
+        @apply left-2;
+    }
+
+    #a-carousal > label:nth-of-type(7),
+    #a-carousal > label:nth-of-type(8),
+    #a-carousal > label:nth-of-type(9),
+    #a-carousal > label:nth-of-type(10),
+    #a-carousal > label:nth-of-type(11),
+    #a-carousal > label:nth-of-type(12) {
+        @apply right-2;
+    }
+
+    #a-carousal > div:last-of-type {
+        @apply bottom-3 gap-1.5;
+    }
+
+    #a-carousal > div:last-of-type > label {
+        @apply w-2 h-2;
+    }
+}
+
+/* RESPONSIVE - Small Screens */
+@media (min-width: 361px) and (max-width: 640px) {
+    #a-carousal {
+        @apply rounded-md;
+    }
+
+    #a-carousal > div:first-of-type > * {
+        @apply h-[450px] p-8;
+    }
+}
+
+/* RESPONSIVE - Medium Screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+    #a-carousal {
+        @apply max-w-4xl;
+    }
+
+    #a-carousal > div:first-of-type > * {
+        @apply h-[550px];
+    }
+}
+
+/* RESPONSIVE - Landscape Mode */
+@media (max-height: 480px) and (orientation: landscape) {
+    #a-carousal > div:first-of-type > * {
+        @apply h-[350px] p-6;
+    }
+
+    #a-carousal > div:first-of-type > * h2 {
+        @apply text-3xl mb-3;
+    }
+
+    #a-carousal > div:first-of-type > * p {
+        @apply text-base;
+    }
+
+    #a-carousal > label {
+        @apply w-10 h-10 text-xl;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    #a-carousal > label {
+        @apply p-3 w-12 h-12;
+    }
+
+    #a-carousal > div:last-of-type {
+        @apply gap-3;
+    }
+
+    #a-carousal > div:last-of-type > label {
+        @apply w-3.5 h-3.5;
+    }
+}
+
+/* High-resolution screens */
+@media (min-width: 1920px) {
+    #a-carousal {
+        @apply max-w-5xl;
+    }
+
+    #a-carousal > div:first-of-type > * {
+        @apply h-[600px] p-12;
+    }
+
+    #a-carousal > div:first-of-type > * h2 {
+        @apply text-6xl;
+    }
+
+    #a-carousal > div:first-of-type > * p {
+        @apply text-2xl;
+    }
+
+    #a-carousal > label {
+        @apply w-14 h-14 text-3xl;
+    }
+}
