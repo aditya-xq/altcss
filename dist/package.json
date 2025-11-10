@@ -1,8 +1,9 @@
 {
     "name": "altcss",
     "version": "0.0.24",
-    "description": "Opinionated, offbeat, lightweight CSS component library.",
+    "author": "aditya-xq",
     "main": "alt.min.css",
+    "description": "Opinionated, offbeat, lightweight CSS component library.",
     "files": [
         "alt.min.css",
         "README.md"
@@ -13,6 +14,5 @@
         "altcss",
         "tailwindcss"
     ],
-    "author": "aditya-xq",
     "license": "MIT"
 }
