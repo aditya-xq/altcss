@@ -69,7 +69,7 @@
         <div>
             <div>
                 <h2>Slide 1</h2>
-                <p>Here's a pure HTML & CSS carousel!</p>
+                <p>A pure HTML & CSS carousel!</p>
             </div>
             <div>
                 <h2>Slide 2</h2>
